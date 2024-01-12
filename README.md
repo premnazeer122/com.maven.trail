@@ -1,2 +1,2 @@
-# com.trail.wholesaler.touriz
-Touriz selenium scripts
+# com.trail.wholesaler
+selenium scripts
