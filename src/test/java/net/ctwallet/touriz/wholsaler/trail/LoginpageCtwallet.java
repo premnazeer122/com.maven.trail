@@ -1,4 +1,4 @@
-package net.ctwallet.touriz.wholsaler.trail;
+package net.ct.t.wholsaler.trail;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
@@ -13,13 +13,18 @@ import org.testng.annotations.AfterMethod;
 
 public class LoginpageCtwallet {
 
+	//set golbal object driver for webDriver
 	WebDriver driver;
+
+//web_element_xpath 	
 By Email = By.xpath("//input[@ name='emailId']");
 By Password = By.xpath("//input[@name='password']");
 By showpassword = By.xpath("//span[@class='input-group-text show-password']");
 By Signin = By.xpath("//button[@type='submit']");
 By Signup = By.linkText("Sign Up");
 By forgotPassword = By.linkText("Click Here");
+
+//start_test_login
 	@Test
 	public void Ctwallet_Login() throws InterruptedException {
 		Thread.sleep(2500L);
@@ -36,20 +41,20 @@ By forgotPassword = By.linkText("Click Here");
 		driver.findElement(Signin).click();
 		
 	}
-	
+//click signup
 	@Test
 	public void Ctwallet_sigup() throws InterruptedException{
 		Thread.sleep(2000L);
 		driver.findElement(Signup).click();
 	}
-	
+//click on forget	
 	@Test
 	public void Ctwallet_forgotpassword() throws InterruptedException{
 		Thread.sleep(2000L);
 		driver.findElement(forgotPassword).click();
 	}
 	
-
+//before exection of test setting up driver & url- browser open
 	@BeforeMethod
 	public void beforeMethod() {
 		String url = "http://trial.wholesaler.touriz.net/ctwallet/";
@@ -62,7 +67,7 @@ By forgotPassword = By.linkText("Click Here");
 		driver.manage().window().maximize();
 		driver.get(url);
 	}
-
+//after test execution close web driver & browser
 	@AfterMethod
 	public void afterMethod() throws InterruptedException {
 		Thread.sleep(5000L);
